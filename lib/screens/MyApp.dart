@@ -95,6 +95,7 @@ class _MyAppState extends State<MyApp> {
                           if (TextOne == covidDataOne[i]['country']) {
                             covidData = covidDataOne[i];
                           }
+
                         }
                         setState(() {});
                       },
@@ -133,27 +134,6 @@ class _MyAppState extends State<MyApp> {
                     const SizedBox(
                       height: 10,
                     ),
-                    // Row(
-                    //   children: [
-                    //     Padding(
-                    //       padding: const EdgeInsets.only(left: 70.0),
-                    //       child: Container(
-                    //         width: 250.0,
-                    //         height: 140.0,
-                    //         decoration: BoxDecoration(
-                    //           color: Colors.white60,
-                    //           borderRadius: BorderRadius.circular(10.0),
-                    //         ),
-                    //         child: Image.network(
-                    //           "${covidDataOne['countryInfo']['flag']}",
-                    //           height: 45.0,
-                    //           width: 45.0,
-                    //           fit: BoxFit.cover,
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
                     const SizedBox(
                       height: 10,
                     ),
@@ -161,19 +141,15 @@ class _MyAppState extends State<MyApp> {
                       children: [
                         ReuseableWidget(
                           width: 210.0,
-                          height: 315.0,
+                          height: 290.0,
                           childCard: Padding(
                             padding: const EdgeInsets.only(
                                 top: 8.0, left: 10.0, bottom: 8.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                itemWidget(
-                                  text: "Country",
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
+
+
                                 itemWidget(
                                   text: "Today Deaths",
                                 ),
@@ -225,19 +201,14 @@ class _MyAppState extends State<MyApp> {
                         ),
                         ReuseableWidgetTwo(
                           width: 150.0,
-                          height: 315.0,
+                          height: 290.0,
                           childCardTwo: Padding(
                             padding:
                                 const EdgeInsets.only(top: 8.0, bottom: 8.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                itemWidgetTwo(
-                                  covidDataOne: "${covidData['country']}",
-                                ),
-                                const SizedBox(
-                                  height: 13,
-                                ),
+
                                 itemWidgetTwo(
                                   covidDataOne: "${covidData['todayDeaths']}",
                                 ),
