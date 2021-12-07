@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
     // for world
     final dataOne = data();
     covidData = await dataOne.getSummryData();
-    d=covidData;
+    TextOne="World Data";
     setState(() {});
   }
 
@@ -39,13 +39,6 @@ class _MyAppState extends State<MyApp> {
     final dataOne = data();
     covidDataOne = await dataOne.getCountryData();
     setState(() {});
-  }
-
-  Future refresh() async
-  {
-    setState(() {
-      covidData=d;
-    });
   }
 
   @override
@@ -106,7 +99,6 @@ class _MyAppState extends State<MyApp> {
                             if (TextOne == covidDataOne[i]['country']) {
                               covidData = covidDataOne[i];
                             }
-
                           }
                           setState(() {});
                         },
