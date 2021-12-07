@@ -17,7 +17,6 @@ class _MyAppState extends State<MyApp> {
   var TextOne = 'World Data';
   var covidData;
   var covidDataOne;
-  var d;
 
   @override
   void initState() {
@@ -119,14 +118,12 @@ class _MyAppState extends State<MyApp> {
                       Row(
                         children: <Widget>[
                           ReuseableWidget(
-                            width: 180.0,
                             height: 110.0,
                             childCard: DataWidget(
                                 text: "Total Cases",
                                 covidData: "${covidData['cases']}"),
                           ),
                           ReuseableWidget(
-                            width: 180.0,
                             height: 110.0,
                             childCard: DataWidget(
                                 text: "Total Deaths",
@@ -143,16 +140,13 @@ class _MyAppState extends State<MyApp> {
                       Row(
                         children: [
                           ReuseableWidget(
-                            width: 210.0,
                             height: 290.0,
                             childCard: Padding(
                               padding: const EdgeInsets.only(
-                                  top: 8.0, left: 10.0, bottom: 8.0),
+                                  top: 8.0, left: 10.0, bottom: 8.0,),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-
-
                                   itemWidget(
                                     text: "Today Deaths",
                                   ),
@@ -203,7 +197,6 @@ class _MyAppState extends State<MyApp> {
                             ),
                           ),
                           ReuseableWidgetTwo(
-                            width: 150.0,
                             height: 290.0,
                             childCardTwo: Padding(
                               padding:
@@ -211,7 +204,6 @@ class _MyAppState extends State<MyApp> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-
                                   itemWidgetTwo(
                                     covidDataOne: "${covidData['todayDeaths']}",
                                   ),
@@ -271,14 +263,12 @@ class _MyAppState extends State<MyApp> {
                       Row(
                         children: <Widget>[
                           ReuseableWidget(
-                            width: 180.0,
                             height: 110.0,
                             childCard: DataWidget(
                                 text: "Total Recovered",
                                 covidData: "${covidData['recovered']}"),
                           ),
                           ReuseableWidget(
-                            width: 180.0,
                             height: 110.0,
                             childCard: DataWidget(
                                 text: "Today Recovered",
@@ -303,15 +293,14 @@ class itemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
-      Padding(
-        padding: const EdgeInsets.only(left: 4.0),
-        child: Text(
-          "$text",
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-          ),
+    return Row(
+
+        children: <Widget>[
+      Text(
+        "$text",
+        style: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
         ),
       ),
     ]);
@@ -326,15 +315,12 @@ class itemWidgetTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 4.0),
-      child: Text(
-        "$covidDataOne",
-        style: const TextStyle(
-          fontSize: 17,
-          fontWeight: FontWeight.w500,
-          color: Colors.blueAccent,
-        ),
+    return Text(
+      "$covidDataOne",
+      style: const TextStyle(
+        fontSize: 17,
+        fontWeight: FontWeight.w500,
+        color: Colors.blueAccent,
       ),
     );
   }

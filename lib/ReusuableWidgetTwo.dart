@@ -12,16 +12,17 @@ class ReuseableWidgetTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Container(
-        child: childCardTwo,
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          color: Colors.white60,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.only(right:8,bottom:8,top:8),
+          child: Container(
+            child: childCardTwo,
+            height: height,
+            decoration: BoxDecoration(
+              color: Colors.white60,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+          ),
       ),
     );
   }
